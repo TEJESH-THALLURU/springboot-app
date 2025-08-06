@@ -1,102 +1,116 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <title>Tejesh – DevOps Engineer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Roboto&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" type="text/css"
-	th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.min.css}" />
+  <!-- Font Awesome Icons -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
-<!-- include java script in the footer -->
-<script type="text/javascript"
-	th:src="@{/webjars/jquery/3.2.1/jquery.min.js/}"></script>
-<script type="text/javascript"
-	th:src="@{/webjars/bootstrap/3.3.7/js/bootstrap.min.js}"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      color: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
 
-<title>Spring Boot MongoDB Demo</title>
+    .card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      border-radius: 20px;
+      padding: 40px;
+      text-align: center;
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+      backdrop-filter: blur(10px);
+      max-width: 400px;
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 40px;
+      color: #00ffff;
+      margin: 0;
+    }
+
+    h2 {
+      font-size: 24px;
+      color: #ffd700;
+      margin: 10px 0 30px;
+    }
+
+    .icons {
+      font-size: 36px;
+      color: #00ffff;
+      margin-bottom: 20px;
+    }
+
+    .tagline {
+      font-size: 16px;
+      color: #f0e68c;
+      margin-bottom: 10px;
+    }
+
+    .skills {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 20px;
+    }
+
+    .skills i {
+      font-size: 28px;
+      color: #ffffff;
+      transition: color 0.3s;
+    }
+
+    .skills i:hover {
+      color: #00ffff;
+    }
+
+    @media (max-width: 600px) {
+      .card {
+        padding: 20px;
+        max-width: 90%;
+      }
+
+      h1 {
+        font-size: 30px;
+      }
+    }
+  </style>
 </head>
 <body>
-	<div class="container">
-		<h1 class="text-center">Spring Boot with MongoDB Project V1.0.1</h1>
-		<div class="col-md-6">
-			<form name="saveUser" action="/save" method="post"
-				class="form-horizontal">
-				<div class="form-group">
-					<label for="firstName">First Name:</label> <input type="text"
-						id="firstName" class="form-control" placeholder="First Name"
-						name="firstName" />
-				</div>
 
-				<div class="form-group">
-					<label for="lastName">Last Name:</label> <input type="text"
-						id="lastName" class="form-control" placeholder="Last Name"
-						name="lastName">
-				</div>
+  <div class="card">
+    <div class="icons">
+      <i class="fas fa-cloud"></i>
+      <i class="fas fa-tools"></i>
+      <i class="fas fa-code"></i>
+    </div>
+    <h1>Tejesh</h1>
+    <h2>DevOps Engineer</h2>
+    <p class="tagline">CI/CD Pipelines • AWS • Kubernetes • Docker • Terraform</p>
 
-				<div class="form-group">
-					<label for="email">Email:</label> <input type="email" id="email"
-						class="form-control" placeholder="Email" name="email">
-				</div>
-				<div class="form-group">
-					<button type="submit" class="btn btn-default">Submit</button>
-				</div>
-			</form>
-		</div>
+    <div class="skills">
+      <i class="fab fa-aws" title="AWS"></i>
+      <i class="fab fa-docker" title="Docker"></i>
+      <i class="fab fa-github" title="GitHub"></i>
+      <i class="fas fa-robot" title="Automation"></i>
+    </div>
+  </div>
 
-
-		<div class="col-md-12">
-			<h2>Saved Users</h2>
-			<table id="usersTable" class="table table-striped">
-				<thead>
-					<tr>
-						<th>ID</th>
-						<th>First Name</th>
-						<th>Last Name</th>
-						<th>Email</th>
-					</tr>
-				</thead>
-				<tbody>
-				</tbody>
-			</table>
-		</div>
-
-
-		<div class="row-md-8">
-			<div class="col-md-3">
-				<img th:src="@{/img/prasanth.jpg}" alt="logo" height="200">
-			</div>
-			<div class="col-md-8">
-				<h4 class="text-center">KK DEVOPS ONLINE TRAINING BANGLORE.</h4>
-				<h4 class="text-center">Contact @ +91 8639380177 ,
-					+91-9676831734</h4>
-				<h5 class="text-center">
-					Copyrights 2020 by <a href="http://kkdevops.com/">KK DEVOPS</a>
-				</h5>
-			</div>
-		</div>
-
-	</div>
-
-	<script>
-		$.ajax({
-			url : "/api/users",
-
-			success : function(response) {
-				$.each(response, function(i, item) {
-					var row = $("<tr />");
-					$("#usersTable").append(row);
-
-					row.append($("<td>" + item.id + "</td>"));
-					row.append($("<td>" + item.firstName + "</td>"));
-					row.append($("<td>" + item.lastName + "</td>"));
-					row.append($("<td>" + item.email + "</td>"));
-
-				});
-			}
-		})
-	</script>
 </body>
 </html>
