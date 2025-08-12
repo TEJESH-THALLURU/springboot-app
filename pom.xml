@@ -38,6 +38,17 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
+	<distributionManagement>
+    <snapshotRepository>
+        <id>nexus</id> <!-- This should match the ID in settings.xml -->
+        <url>http://13.233.107.63:8081/repository/maven-snapshots/</url>
+    </snapshotRepository>
+    <repository>
+        <id>nexus</id> <!-- Same ID as credentials in settings.xml -->
+        <url>http://13.233.107.63:8081/repository/maven-releases/</url>
+    </repository>
+</distributionManagement>
+
 
 	<dependencies>
 		<dependency>
