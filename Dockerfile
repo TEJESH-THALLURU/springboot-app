@@ -31,5 +31,5 @@ COPY --from=build /app/target/spring-boot-mongo-1.0-SNAPSHOT.jar $PROJECT_HOME/m
 # Expose port 8080
 EXPOSE 8080
 
-CMD ["java", "-jar", "/opt/app/mongospring.jar"]
+CMD ["java", "-jar", "/opt/app/spring-boot-mongo-1.0-SNAPSHOT.jar"]
 
