@@ -1,116 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <title>Tejesh – DevOps Engineer</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Roboto&display=swap" rel="stylesheet">
-
-  <!-- Font Awesome Icons -->
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Roboto', sans-serif;
-      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
-      color: #ffffff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
-
-    .card {
-      background: rgba(255, 255, 255, 0.05);
-      border: 2px solid rgba(255, 255, 255, 0.2);
-      border-radius: 20px;
-      padding: 40px;
-      text-align: center;
-      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-      backdrop-filter: blur(10px);
-      max-width: 400px;
-      transition: transform 0.3s;
-    }
-
-    .card:hover {
-      transform: scale(1.05);
-    }
-
-    h1 {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 40px;
-      color: #00ffff;
-      margin: 0;
-    }
-
-    h2 {
-      font-size: 24px;
-      color: #ffd700;
-      margin: 10px 0 30px;
-    }
-
-    .icons {
-      font-size: 36px;
-      color: #00ffff;
-      margin-bottom: 20px;
-    }
-
-    .tagline {
-      font-size: 16px;
-      color: #f0e68c;
-      margin-bottom: 10px;
-    }
-
-    .skills {
-      display: flex;
-      justify-content: space-around;
-      margin-top: 20px;
-    }
-
-    .skills i {
-      font-size: 28px;
-      color: #ffffff;
-      transition: color 0.3s;
-    }
-
-    .skills i:hover {
-      color: #00ffff;
-    }
-
-    @media (max-width: 600px) {
-      .card {
-        padding: 20px;
-        max-width: 90%;
-      }
-
-      h1 {
-        font-size: 30px;
-      }
-    }
-  </style>
+    <title>Spring Boot Frontend</title>
+    <link th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.min.css}" rel="stylesheet" />
 </head>
 <body>
-
-  <div class="card">
-    <div class="icons">
-      <i class="fas fa-cloud"></i>
-      <i class="fas fa-tools"></i>
-      <i class="fas fa-code"></i>
+    <div class="container">
+        <h1 th:text="${message}">Default message</h1>
+        <p>This is your Spring Boot app frontend page.</p>
     </div>
-    <h1>Tejesh</h1>
-    <h2>DevOps Engineer</h2>
-    <p class="tagline">CI/CD Pipelines • AWS • Kubernetes • Docker • Terraform</p>
 
-    <div class="skills">
-      <i class="fab fa-aws" title="AWS"></i>
-      <i class="fab fa-docker" title="Docker"></i>
-      <i class="fab fa-github" title="GitHub"></i>
-      <i class="fas fa-robot" title="Automation"></i>
-    </div>
-  </div>
-
+    <script th:src="@{/webjars/jquery/3.2.1/jquery.min.js}"></script>
+    <script th:src="@{/webjars/bootstrap/3.3.7/js/bootstrap.min.js}"></script>
 </body>
 </html>
