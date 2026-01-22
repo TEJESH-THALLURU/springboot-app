@@ -2,11 +2,22 @@ pipeline {
     agent any
 
     stages {
-        stage('Hello') {
+        stage('Clone Repo') {
             steps {
-                echo 'Pipeline is running successfully'
+                sh '''
+                rm -rf springboot-app
+                git clone https://github.com/TEJESH-THALLURU/springboot-app.git
+                '''
+            }
+        }
+
+        stage('Build Docker Image') {
+            steps {
+                sh '''
+                cd springboot-app
+                docker build -t springboot-app:latest .
+                '''
             }
         }
     }
 }
-
