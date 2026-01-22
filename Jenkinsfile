@@ -15,7 +15,7 @@ pipeline {
             steps {
                 sh '''
                 cd springboot-app
-                docker build -t springboot-app:latest .
+                docker build -t springboot-app:v1 .
                 '''
             }
         }
